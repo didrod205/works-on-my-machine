@@ -1,0 +1,72 @@
+{
+  "name": "womm",
+  "version": "0.1.0",
+  "description": "\"Works on my machine\" — finally with receipts. Capture a privacy-safe fingerprint of your dev environment, diff it against a teammate's (or CI), and get told exactly what's different and why it broke. Plus the legendary ✓ works-on-my-machine badge. 100% local, no telemetry.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "womm": "./dist/cli.js",
+    "works-on-my-machine": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "example": "node dist/cli.js diff examples/ci-linux.json examples/dev-mac.json",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "works-on-my-machine",
+    "environment",
+    "envinfo",
+    "diff",
+    "debugging",
+    "bug-report",
+    "reproducibility",
+    "fingerprint",
+    "node-version",
+    "doctor",
+    "onboarding",
+    "ci",
+    "badge",
+    "cli",
+    "devtools"
+  ],
+  "author": "didrod205 (https://github.com/didrod205)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didrod205/works-on-my-machine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/didrod205/works-on-my-machine/issues"
+  },
+  "homepage": "https://github.com/didrod205/works-on-my-machine#readme",
+  "dependencies": {
+    "cac": "^6.7.14",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

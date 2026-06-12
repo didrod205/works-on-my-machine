@@ -1,0 +1,24 @@
+{
+  "womm": 1,
+  "fingerprint": "womm:00000000",
+  "captured": "2026-06-10",
+  "facts": [
+    { "key": "runtime.node", "section": "runtime", "label": "Node", "value": "22.3.0" },
+    { "key": "runtime.node.path", "section": "runtime", "label": "Node from", "value": "nvm (~/.nvm/versions/node/v22.3.0/bin/node)" },
+    { "key": "packageManager.npm", "section": "packageManager", "label": "npm", "value": "10.8.1" },
+    { "key": "packageManager.registry", "section": "packageManager", "label": "npm registry", "value": "https://npm.corp.acme.dev/" },
+    { "key": "packageManager.active", "section": "packageManager", "label": "Declared PM", "value": "npm" },
+    { "key": "project.name", "section": "project", "label": "Project", "value": "acme-api@2.3.1" },
+    { "key": "project.engines.node", "section": "project", "label": "engines.node", "value": ">=20" },
+    { "key": "project.lockfile.type", "section": "project", "label": "Lockfile", "value": "package-lock.json" },
+    { "key": "project.lockfile.hash", "section": "project", "label": "Lockfile hash", "value": "sha256:f9e8d7c6b5a4" },
+    { "key": "project.node_modules", "section": "project", "label": "node_modules", "value": "present" },
+    { "key": "env.NODE_OPTIONS", "section": "env", "label": "NODE_OPTIONS", "value": "(set, 24 chars)" },
+    { "key": "env.TZ.resolved", "section": "env", "label": "Timezone", "value": "Asia/Seoul" },
+    { "key": "env.locale.resolved", "section": "env", "label": "Locale", "value": "ko-KR" },
+    { "key": "tools.git", "section": "tools", "label": "git", "value": "2.50.1" },
+    { "key": "os.platform", "section": "os", "label": "OS", "value": "darwin 24.5.0" },
+    { "key": "os.arch", "section": "os", "label": "Arch", "value": "arm64" },
+    { "key": "os.memory", "section": "os", "label": "RAM", "value": "36 GB" }
+  ]
+}
