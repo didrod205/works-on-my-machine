@@ -4,16 +4,18 @@
 
 ### The most famous excuse in software — finally with receipts.
 
-[![npm version](https://img.shields.io/npm/v/womm.svg?color=success)](https://www.npmjs.com/package/womm)
+[![npm version](https://img.shields.io/npm/v/but-it-works-on-my-machine.svg?color=success)](https://www.npmjs.com/package/but-it-works-on-my-machine)
 [![CI](https://github.com/didrod205/works-on-my-machine/actions/workflows/ci.yml/badge.svg)](https://github.com/didrod205/works-on-my-machine/actions/workflows/ci.yml)
-[![types](https://img.shields.io/npm/types/womm.svg)](https://www.npmjs.com/package/womm)
-[![license](https://img.shields.io/npm/l/womm.svg)](./LICENSE)
+[![types](https://img.shields.io/npm/types/but-it-works-on-my-machine.svg)](https://www.npmjs.com/package/but-it-works-on-my-machine)
+[![license](https://img.shields.io/npm/l/but-it-works-on-my-machine.svg)](./LICENSE)
 &nbsp;
 <img src="./examples/badge.svg" alt="works on my machine" />
 
 ```bash
-npx womm
+npx but-it-works-on-my-machine
 ```
+
+*(yes, that's the real command — after `npm i -g` it's just `womm`)*
 
 *Capture a paste-safe fingerprint of your dev environment → diff it against a
 teammate's (or CI) → get told **exactly what's different and why it broke.***
@@ -35,10 +37,11 @@ machines. `envinfo` tells you what **you** have. **womm tells you what's
 
 ## The killer move: `womm diff`
 
-You run `npx womm report` and attach `womm.json` to the issue. They run:
+You run `npx but-it-works-on-my-machine report` and attach `womm.json` to the
+issue. They run:
 
 ```bash
-npx womm your-womm.json        # diff their machine against yours
+npx but-it-works-on-my-machine your-womm.json   # diff their machine against yours
 ```
 
 ```
@@ -64,7 +67,7 @@ Differences are **ranked by how often they're the actual culprit** — Node
 version, package-manager version, registry, lockfile drift, `NODE_ENV` — each
 with a one-line *why this matters*. No more eyeballing two walls of `envinfo`.
 
-## What `npx womm` captures (and what it never does)
+## What it captures (and what it never does)
 
 ```
   ✓ works on my machine  ·  womm:2fce9e48  2026-06-12
@@ -110,7 +113,7 @@ lockfiles, non-default registries, and a globally-set `NODE_ENV=production`.
 
 ```jsonc
 // package.json — make "works on my machine" a guarantee instead of an excuse
-{ "scripts": { "preinstall": "npx --yes womm check" } }
+{ "scripts": { "preinstall": "npx --yes but-it-works-on-my-machine check" } }
 ```
 
 ## The badge 🏅
@@ -118,8 +121,8 @@ lockfiles, non-default registries, and a globally-set `NODE_ENV=production`.
 In loving memory of the [2007 certification program](https://blog.codinghorror.com/the-works-on-my-machine-certification-program/):
 
 ```bash
-npx womm badge                 # → womm.svg
-npx womm badge --fingerprint   # …with your env fingerprint, as receipts
+npx but-it-works-on-my-machine badge                 # → womm.svg
+npx but-it-works-on-my-machine badge --fingerprint   # …with your fingerprint, as receipts
 ```
 
 <img src="./examples/badge.svg" alt="works on my machine badge" /> &nbsp; ← embed it in your README. You've earned it.
@@ -127,13 +130,18 @@ npx womm badge --fingerprint   # …with your env fingerprint, as receipts
 ## Install
 
 ```bash
-npx womm              # no install
-npm i -g womm         # or keep it; also installs `works-on-my-machine` if you like typing
+npx but-it-works-on-my-machine        # no install — yes, the package name is the excuse
+npm i -g but-it-works-on-my-machine   # installs the short commands: womm + works-on-my-machine
 ```
+
+> The npm name is long because npm's similarity filter reserves the short ones —
+> consider it a feature: the command *is* the meme.
 
 Node ≥ 18. macOS / Linux / Windows. Zero-dependency core (the CLI uses `cac` + `picocolors`).
 
 ## All commands
+
+<sub>(`womm` = the installed bin; with npx, prefix `npx but-it-works-on-my-machine …`)</sub>
 
 ```bash
 womm                        # capture & pretty-print this machine
@@ -150,24 +158,25 @@ womm doctor                 # what the project declares, at a glance
 
 ## For maintainers: a better bug-report block
 
-Issue templates have asked for `npx envinfo` output for years. `npx womm --quiet --md`
-prints a **collapsed, paste-safe details block** — and unlike a wall of text, the
-reporter's JSON can be **diffed against yours** in one command:
+Issue templates have asked for `npx envinfo` output for years.
+`npx but-it-works-on-my-machine --quiet --md` prints a **collapsed, paste-safe
+details block** — and unlike a wall of text, the reporter's JSON can be
+**diffed against yours** in one command:
 
 ```md
 <!-- ISSUE_TEMPLATE/bug_report.md -->
-Run `npx womm --quiet --md` and paste the output below.
+Run `npx but-it-works-on-my-machine --quiet --md` and paste the output below.
 ```
 
-Triaging then becomes: download their `womm.json` → `npx womm their.json` → the
-critical differences are at the top, explained.
+Triaging then becomes: download their `womm.json` → `npx but-it-works-on-my-machine their.json`
+→ the critical differences are at the top, explained.
 
 ## Library API
 
 The diff/verdict engine is pure and browser-safe:
 
 ```ts
-import { parseReport, diffReports, runVerdicts, satisfies } from "womm";
+import { parseReport, diffReports, runVerdicts, satisfies } from "but-it-works-on-my-machine";
 
 const d = diffReports(parseReport(a), parseReport(b));
 d.entries[0]; // { key: "runtime.node", a: "20.12.2", b: "22.3.0", severity: "critical", note: "…" }

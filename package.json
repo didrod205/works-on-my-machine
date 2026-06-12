@@ -1,5 +1,5 @@
 {
-  "name": "womm",
+  "name": "but-it-works-on-my-machine",
   "version": "0.1.0",
   "description": "\"Works on my machine\" — finally with receipts. Capture a privacy-safe fingerprint of your dev environment, diff it against a teammate's (or CI), and get told exactly what's different and why it broke. Plus the legendary ✓ works-on-my-machine badge. 100% local, no telemetry.",
   "type": "module",
@@ -15,7 +15,8 @@
   },
   "bin": {
     "womm": "./dist/cli.js",
-    "works-on-my-machine": "./dist/cli.js"
+    "works-on-my-machine": "./dist/cli.js",
+    "but-it-works-on-my-machine": "./dist/cli.js"
   },
   "files": [
     "dist"
